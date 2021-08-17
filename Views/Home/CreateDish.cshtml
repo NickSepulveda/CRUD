@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create a New Dish!</title>
+    </head>
+    <body>
+        <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+        @model Dish
+        <form action="/new" method="post">
+            <span asp-validation-for="Name"></span>
+            <label for="Name">Dish Name:</label>
+            <input type="text" id="Name" name="Name">
+            <span asp-validation-for="Chef"></span>
+            <label for="Chef">Chef Name:</label>
+            <input type="text" id="Chef" name="Chef">
+            <span asp-validation-for="Tastiness"></span>
+            <label for="Tastiness">Tastiness:</label>
+            <select name = "Tastiness">
+                <option value = "1">1</option>
+                <option value = "2">2</option>
+                <option value = "3">3</option>
+                <option value = "4">4</option>
+                <option value = "5">5</option>
+            </select>
+            <span asp-validation-for="Calories"></span>
+            <label for="Calories">Calories:</label>
+            <input type="text" id="Calories" name="Calories">
+            <span asp-validation-for="Description"></span>
+            <p>Description:</p>
+            <textarea name="Description"></textarea>
+            <input type="submit" value="Add Dish">
+        </form>
+    </body>    
+</html>

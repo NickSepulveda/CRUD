@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes</title>
+</head>
+
+<body>
+    <h1>Welcome to CRUDelicious!</h1>
+    <h2>Check out some recent dishes!</h2>
+    @{
+        @foreach (var dish in ViewBag.Dishes)
+        {
+            <h3><a href="@dish.DishId">@dish.Name</a> by @dish.Chef</h3>
+        }
+    }
+
+    
+    <a href="new">Add New Dish</a>
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create a New Dish!</title>
+    </head>
+    <body>
+        <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+
+@model Dish
+    <form action="/update/@ViewBag.DishId" method="post">
+            <p>Name:</p>
+            <span asp-validation-for="Name"></span>
+            <textarea name="Name" id="Name" cols="15" rows="1">@ViewBag.DishName</textarea>
+            <p>Chef:</p>
+            <span asp-validation-for="Chef"></span>
+            <textarea name="Chef" id="Chef" cols="15" rows="1">@ViewBag.DishChef</textarea>
+            <p>Calories:</p>
+            <span asp-validation-for="Calories"></span>
+            <textarea name="Calories" id="Calories" cols="15" rows="1">@ViewBag.DishCalories</textarea>
+            <p>Tastiness:</p>
+            <select number = "@ViewBag.DishTastiness"> 
+                <option value = "1">1</option>
+                <option value = "2">2</option>
+                <option value = "3">3</option>
+                <option value = "4">4</option>
+                <option value = "5">5</option>
+            </select>
+            <span asp-validation-for="Description"></span>
+            <p>Description:</p>
+            <textarea name="Description">@ViewBag.DishDescription</textarea>
+            <input type="submit" value="Edit Dish">
+        </form>
+    </body>    
+</html>  
